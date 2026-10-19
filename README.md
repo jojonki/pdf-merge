@@ -8,11 +8,9 @@ Just open `PDFMerge.html` in a browser. It works on both Windows and Mac, with n
 
 1. Open `PDFMerge.html` in a browser (Chrome / Edge / Safari / Firefox)
 2. Drag and drop PDF files onto the page (or click to select them)
-3. Reorder by dragging rows, using the ▲▼ buttons, or 名前順 (sort by name) / 逆順 (reverse)
-4. Optionally specify which pages to use in the ページ (pages) field (e.g. `1-3,5`; leave blank for all pages)
-5. Enter an output file name and click 結合して保存 (merge and save)
-
-The UI is in Japanese.
+3. Reorder by dragging rows, using the ▲▼ buttons, or "Sort by name" / "Reverse"
+4. Optionally specify which pages to use in the pages field (e.g. `1-3,5`; leave blank for all pages)
+5. Enter an output file name and click "Merge & save"
 
 To share the tool, just hand over the single `PDFMerge.html` file.
 
