@@ -1,23 +1,36 @@
-# PDF結合ツール
+# pdf-merge
 
-`PDFMerge.html` をダブルクリックしてブラウザで開くだけで使える、PDF結合ツールです。
-Windows / Mac どちらでも動き、インストールもネット接続も不要です（ファイルは外部へ送信されません）。
+Merge PDFs in your browser — drag, drop, reorder. No install, no upload; everything runs locally.
 
-## 使い方
+Just open `PDFMerge.html` in a browser. It works on both Windows and Mac, with no installation or internet connection required. Your files are never sent anywhere.
 
-1. `PDFMerge.html` をブラウザ（Chrome / Edge / Safari / Firefox）で開く
-2. PDFファイルを画面にドラッグ＆ドロップ（またはクリックして選択）
-3. 行のドラッグ、▲▼ボタン、「名前順」「逆順」で並べ替え
-4. 必要なら「ページ」欄で使うページを指定（例: `1-3,5`、空欄なら全ページ）
-5. 出力ファイル名を入力して「結合して保存」
+## Usage
 
-配布するときは `PDFMerge.html` の1ファイルだけを渡せばOKです。
+1. Open `PDFMerge.html` in a browser (Chrome / Edge / Safari / Firefox)
+2. Drag and drop PDF files onto the page (or click to select them)
+3. Reorder by dragging rows, using the ▲▼ buttons, or 名前順 (sort by name) / 逆順 (reverse)
+4. Optionally specify which pages to use in the ページ (pages) field (e.g. `1-3,5`; leave blank for all pages)
+5. Enter an output file name and click 結合して保存 (merge and save)
 
-## 開発
+The UI is in Japanese.
 
-`src/template.html` を編集し、以下で `PDFMerge.html` を再生成します（[pdf-lib](https://pdf-lib.js.org/) を埋め込みます）。
+To share the tool, just hand over the single `PDFMerge.html` file.
+
+## How it works
+
+Merging is done entirely in the browser using [pdf-lib](https://pdf-lib.js.org/), which is inlined into `PDFMerge.html`. Files are read with the File API, merged in memory, and saved via a `blob:` URL — no network requests are made.
+
+Note: password-protected (encrypted) PDFs may not merge correctly.
+
+## Development
+
+Edit `src/template.html`, then regenerate `PDFMerge.html` (this inlines pdf-lib):
 
 ```sh
 npm install
 npm run build
 ```
+
+## License
+
+MIT
